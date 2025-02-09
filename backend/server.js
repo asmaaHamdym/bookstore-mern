@@ -5,7 +5,7 @@ import { Book } from "./models/bookModel.js";
 
 const app = express();
 app.use(express.json());
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 dotenv.config();
 
 app.get("/", (req, res) => {
@@ -13,16 +13,28 @@ app.get("/", (req, res) => {
 });
 
 // get request to get all books
-app /
-  get("/books", async (req, res) => {
-    try {
-      const books = await Book.find({});
-      return res.status(200).send(books);
-    } catch (error) {
-      console.log(error);
-      return res.status(500).send({ message: error.message });
-    }
-  });
+app.get("/books", async (req, res) => {
+  try {
+    const books = await Book.find({});
+    return res.status(200).send({
+      count: books.length,
+      books,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ message: error.message });
+  }
+});
+// get request to get a book by id
+app.get("/books/:id", async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id);
+    return res.status(200).send(book);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ message: error.message });
+  }
+});
 // post request to add a book
 app.post("/books", async (req, res) => {
   //   console.log(req.query.title);
