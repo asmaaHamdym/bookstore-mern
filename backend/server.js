@@ -12,9 +12,20 @@ app.get("/", (req, res) => {
   return res.status(234).send("Hello from my server");
 });
 
+// get request to get all books
+app /
+  get("/books", async (req, res) => {
+    try {
+      const books = await Book.find({});
+      return res.status(200).send(books);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({ message: error.message });
+    }
+  });
 // post request to add a book
 app.post("/books", async (req, res) => {
-  console.log(req.body);
+  //   console.log(req.query.title);
 
   try {
     if (!req.body.title || !req.body.author || !req.body.publishYear) {
