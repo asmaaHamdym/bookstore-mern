@@ -1,13 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { Book } from "./models/bookModel.js";
+import cors from "cors";
 import booksRouter from "./routes/bookRoutes.js";
 
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
 dotenv.config();
+app.use(cors());
 
 app.get("/", (req, res) => {
   return res.status(234).send("Hello from my server");
