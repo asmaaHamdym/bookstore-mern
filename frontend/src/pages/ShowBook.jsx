@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import { Backbutton } from "../components/Backbutton";
+import { BackButton } from "../components/BackButton";
 
 const ShowBook = () => {
   const { id } = useParams();
@@ -25,7 +25,7 @@ const ShowBook = () => {
   }, []);
   return (
     <div className="p-4">
-      <Backbutton />
+      <BackButton />
       <h1 className="text-3xl my-8">Book Details</h1>
       {loading ? (
         <Spinner />

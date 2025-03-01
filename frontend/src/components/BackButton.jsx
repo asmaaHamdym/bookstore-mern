@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 
-export const Backbutton = ({ destination = "/" }) => {
+export const BackButton = ({ destination = "/" }) => {
   return (
     <div className="flex ">
       <Link
