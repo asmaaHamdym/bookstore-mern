@@ -3,7 +3,6 @@ import axios from "axios";
 import Spinner from "../components/Spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { BackButton } from "../components/BackButton";
-import { set } from "mongoose";
 
 const EditBook = () => {
   const [title, setTitle] = useState("");

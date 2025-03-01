@@ -52,6 +52,7 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
+          {loading && <Spinner />}
           {books.map((book, index) => {
             return (
               <tr key={book._id} className="h-8 text-center">
