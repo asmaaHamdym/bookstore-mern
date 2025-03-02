@@ -15,8 +15,6 @@ const Home = () => {
     axios
       .get("http://localhost:3000/books")
       .then((res) => {
-        console.log(res);
-
         setBooks(res.data.books);
         setLoading(false);
       })
@@ -54,7 +52,11 @@ const Home = () => {
         </Link>
       </div>
       {loading && <Spinner />}
-      {view == "table" ? <BooksTable books={books} /> : <BooksCard />}
+      {view == "table" ? (
+        <BooksTable books={books} />
+      ) : (
+        <BooksCard books={books} />
+      )}
     </div>
   );
 };
