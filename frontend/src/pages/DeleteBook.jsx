@@ -23,6 +23,9 @@ const DeleteBook = () => {
         alert("Failed to delete book");
       });
   };
+  const handelAbort = () => {
+    navigate("/");
+  };
   return (
     <div className="p-4">
       <BackButton />
@@ -31,10 +34,16 @@ const DeleteBook = () => {
       <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
         <h3 className="text-2xl">Are you sure you want to delete this book?</h3>
         <button
-          className="p-4 bg-red-600 text-white m-8 w-full"
+          className="p-4 bg-red-600 text-white m-4 w-full"
           onClick={handelDelete}
         >
           Yes
+        </button>
+        <button
+          className="p-4 bg-red-600 text-white w-full"
+          onClick={handelAbort}
+        >
+          Cancel
         </button>
       </div>
     </div>

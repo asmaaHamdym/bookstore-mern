@@ -91,7 +91,7 @@ const EditBook = () => {
           />
         </div>
         <button onClick={handleSubmit} className="bg-sky-300 m-8 py-2 ">
-          Create
+          Save
         </button>
       </div>
     </div>
