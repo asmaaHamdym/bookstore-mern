@@ -14,7 +14,6 @@ const ShowBook = () => {
     axios
       .get(`http://localhost:3000/books/${id}`)
       .then((res) => {
-        console.log(res);
         setBook(res.data);
         setLoading(false);
       })
@@ -26,7 +25,7 @@ const ShowBook = () => {
   return (
     <div className="p-4">
       <BackButton />
-      <h1 className="text-3xl my-8">Book Details</h1>
+      <h1 className="text-3xl my-8 text-center">Book Details</h1>
       {loading ? (
         <Spinner />
       ) : (

@@ -23,7 +23,7 @@ export const BooksCard = ({ books }) => {
             <BiUserCircle className="text-2xl text-red-300" />
             <h2 className="my-1">{book.author}</h2>
           </div>
-          <div className="flex justify-between gap-x-2">
+          <div className="flex justify-between gap-x-2 m-6">
             <Link to={`books/show/${book._id}`}>
               <BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
             </Link>
